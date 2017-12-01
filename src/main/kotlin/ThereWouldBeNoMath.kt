@@ -28,6 +28,5 @@ fun main(args: Array<String>) {
 
     println(input.sumBy { calculatePaper(it) })
     println(input.sumBy { calculateRibbon(it) })
-
 }
 
