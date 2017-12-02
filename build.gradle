@@ -2,7 +2,7 @@ group 'be.bucephalus'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.1.51'
+    ext.kotlin_version = '1.2.0-release-IJ2017.2-1'
 
     repositories {
         mavenCentral()

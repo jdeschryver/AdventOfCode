@@ -1,4 +1,4 @@
-import java.io.File
+package y2015
 
 /**
  * @author Jan De Schryver <Jan.DeSchryver@bucephalus.be>
@@ -20,7 +20,7 @@ fun calculateHouses2(journey: String): Int {
     val coordinates = mutableSetOf((0 to 0))
     val position = mutableListOf(0 to 0, 0 to 0)
     journey.forEachIndexed { i, c ->
-        val n = nextCoordinates(position[i%2], c)
+        val n = nextCoordinates(position[i % 2], c)
         coordinates.add(n)
         position[i%2] = n
     }

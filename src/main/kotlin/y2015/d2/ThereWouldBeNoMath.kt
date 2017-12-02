@@ -1,3 +1,5 @@
+package y2015
+
 import java.io.File
 
 /**
@@ -22,7 +24,7 @@ fun calculateRibbon(box: String): Int {
 }
 
 fun main(args: Array<String>) {
-    val input = File( "src\\main\\kotlin\\input.txt")
+    val input = File( "src\\main\\kotlin\\y2015\\d2\\input.txt")
             .inputStream()
             .use { it.bufferedReader().readLines() }
 
