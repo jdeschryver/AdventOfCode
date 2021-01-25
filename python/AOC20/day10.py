@@ -1,6 +1,3 @@
-import numpy as np
-
-
 def read_joltage_ratings():
     with open("input/day10-ex1.txt", "r") as file:
         data = file.read().rstrip().split()
