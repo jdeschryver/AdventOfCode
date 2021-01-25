@@ -35,7 +35,7 @@ Module ex7
 
     Function ReadBags() As Dictionary(Of String, List(Of BagContentElement))
         Dim bagToContent As New Dictionary(Of String, List(Of BagContentElement))
-        For Each line As String In File.ReadLines(FilePath)
+        For Each line In File.ReadLines(FilePath)
             Dim outerAndInnerBags() = Regex.Split(line, "contain")
             Dim rawOurBag = outerAndInnerBags(0)
             Dim rawInnerBag = outerAndInnerBags(1)
@@ -54,11 +54,12 @@ Module ex7
 
         Dim innerBags As String = Regex.Replace(rawInnerBags, "bag(s)?[\s.]?", "").Trim
         Dim innerBagsList = New List(Of BagContentElement)
-        For Each innerBag As String In Regex.Split(innerBags, ",\s")
-            Dim bagInfoDetails As String() = New Regex("\s").Split(innerBag, 2, 0)
-            Dim bagInfo As BagContentElement = New BagContentElement()
-            bagInfo.bagName = bagInfoDetails(1).Trim
-            bagInfo.numberOfBags = bagInfoDetails(0)
+        For Each innerBag In Regex.Split(innerBags, ",\s")
+            Dim bagInfoDetails = New Regex("\s").Split(innerBag, 2, 0)
+            Dim bagInfo = New BagContentElement With {
+                .bagName = bagInfoDetails(1).Trim,
+                .numberOfBags = bagInfoDetails(0)
+            }
             innerBagsList.Add(bagInfo)
         Next
         Return innerBagsList
